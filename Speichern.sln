@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Speichern", "Speichern\Speichern.csproj", "{4994506F-CC87-407E-B0E5-BF78332FFE0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml_Json_Binary", "Xml_Json_Binary\Xml_Json_Binary.csproj", "{FEC19DD8-3FB7-40B7-914A-2796B79E9546}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4994506F-CC87-407E-B0E5-BF78332FFE0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4994506F-CC87-407E-B0E5-BF78332FFE0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4994506F-CC87-407E-B0E5-BF78332FFE0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4994506F-CC87-407E-B0E5-BF78332FFE0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {13EF4EA0-D0AB-4625-AABC-4269AA67F607}
+	EndGlobalSection
+EndGlobal
