@@ -12,6 +12,9 @@ namespace Xml_Json_Binary
     {
         public static void WriteToXmlFile<T>(string filePath, T objectToWrite, bool append=false) where T:new()
         {
+            //bool if its true it doesnt overwrite just adds it in the file
+            //if false it replaces the already given person with what we write
+
             TextWriter writer = null;
             try
             {

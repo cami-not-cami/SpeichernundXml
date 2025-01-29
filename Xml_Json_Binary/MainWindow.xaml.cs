@@ -1,4 +1,7 @@
-﻿using System.Text;
+﻿using Microsoft.Win32;
+using System.DirectoryServices.ActiveDirectory;
+using System.IO;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -37,10 +40,42 @@ namespace Xml_Json_Binary
         private void LoadClick(object sender, RoutedEventArgs e)
         {
 
+
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "xml Datei (*.xml)|*.xml|Alle Dateien (*.*)|*.*";
+            openFileDialog.FileName = _path;
+
+            Person loadPerson = null;
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+               loadPerson= XmlLoader.ReadFromXmlFile<Person>(_path);
+                tbl_output.Text = loadPerson.ToString();
+
+            }
+
         }
 
         private void SaveAtClick(object sender, RoutedEventArgs e)
         {
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "xml Datei (*.xml)|*.xml|Alle Dateien (*.*)|*.*";
+            saveFileDialog.DefaultExt = ".xml";
+            saveFileDialog.AddExtension = true;
+            saveFileDialog.DefaultDirectory = "C:" ;
+            saveFileDialog.FileName = "MeineDatei";
+
+            Person temp = new Person();
+            temp.Name = tbx_name.Text;
+            temp.Email = tbx_email.Text;
+            temp.Taetigkeit = tbx_taetigkeit.Text;
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                //update to the last document saved
+                _path = saveFileDialog.FileName;
+                XmlLoader.WriteToXmlFile(saveFileDialog.FileName, temp,false);
+            }
 
         }
     }
