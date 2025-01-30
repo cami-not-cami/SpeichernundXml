@@ -1,17 +1,5 @@
 ﻿using Microsoft.Win32;
-using System.DirectoryServices.ActiveDirectory;
-using System.IO;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using System.Xml.Serialization;
 
 namespace Xml_Json_Binary
 {
@@ -20,21 +8,36 @@ namespace Xml_Json_Binary
     /// </summary>
     public partial class MainWindow : Window
     {
-        private string _path = @"C:\Users\Cami\Documents\helloWorld.xml";
+        private string _path = @"C:\Users\Cami\Documents\helloWorld.bin";
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void SaveClick(object sender, RoutedEventArgs e)
         {
             //werte für object geben von input
             Person temp = new Person();
-            temp.Name= tbx_name.Text;
-            temp.Email= tbx_email.Text;
+            temp.Name = tbx_name.Text;
+            temp.Email = tbx_email.Text;
             temp.Taetigkeit = tbx_taetigkeit.Text;
 
-            XmlLoader.WriteToXmlFile<Person>(_path, temp,false);
+            ComplexClass girlie = new ComplexClass();
+            girlie.Name = "Cici";
+            girlie.Age = 43;
+            girlie.ShoeSize =37.5d;
+            girlie.IsAlive= true;
+            girlie.Initial = 'C';
+            girlie.Height = 1.70f;
+            girlie.Money =2341.141m;
+            girlie.Exes = new List<Person>{temp,temp};
+            girlie.ChildrenAge = new int[] { 3, 12, 66, 23 };
+
+            XmlLoader.WriteToXmlFile<ComplexClass>(_path, girlie,false);
+            //BinaryLoader.WriteToBinary<Person>(_path, temp,false);
+            //JsonLoader.WriteToJsonFile<Person>(_path, temp,false);
+            //XmlLoader.WriteToXmlFile<Person>(_path, temp, false);
         }
 
         private void LoadClick(object sender, RoutedEventArgs e)
@@ -47,9 +50,13 @@ namespace Xml_Json_Binary
 
             Person loadPerson = null;
 
+
             if (openFileDialog.ShowDialog() == true)
             {
-               loadPerson= XmlLoader.ReadFromXmlFile<Person>(_path);
+
+                //loadPerson = BinaryLoader.ReadFromBinary<Person>(_path);
+                //loadPerson = XmlLoader.ReadFromXmlFile<Person>(_path);
+                loadPerson = JsonLoader.ReadFromJsonFile<Person>(_path);
                 tbl_output.Text = loadPerson.ToString();
 
             }
@@ -62,7 +69,7 @@ namespace Xml_Json_Binary
             saveFileDialog.Filter = "xml Datei (*.xml)|*.xml|Alle Dateien (*.*)|*.*";
             saveFileDialog.DefaultExt = ".xml";
             saveFileDialog.AddExtension = true;
-            saveFileDialog.DefaultDirectory = "C:" ;
+            saveFileDialog.DefaultDirectory = "C:";
             saveFileDialog.FileName = "MeineDatei";
 
             Person temp = new Person();
@@ -74,7 +81,7 @@ namespace Xml_Json_Binary
             {
                 //update to the last document saved
                 _path = saveFileDialog.FileName;
-                XmlLoader.WriteToXmlFile(saveFileDialog.FileName, temp,false);
+                XmlLoader.WriteToXmlFile(saveFileDialog.FileName, temp, false);
             }
 
         }

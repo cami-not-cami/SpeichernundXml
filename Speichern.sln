@@ -5,7 +5,9 @@ VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Speichern", "Speichern\Speichern.csproj", "{4994506F-CC87-407E-B0E5-BF78332FFE0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Xml_Json_Binary", "Xml_Json_Binary\Xml_Json_Binary.csproj", "{FEC19DD8-3FB7-40B7-914A-2796B79E9546}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xml_Json_Binary", "Xml_Json_Binary\Xml_Json_Binary.csproj", "{FEC19DD8-3FB7-40B7-914A-2796B79E9546}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CSVLoader", "CSVLoader\CSVLoader.csproj", "{28CE5BFA-208E-468A-9A0E-EA39F054064B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC19DD8-3FB7-40B7-914A-2796B79E9546}.Release|Any CPU.Build.0 = Release|Any CPU
+		{28CE5BFA-208E-468A-9A0E-EA39F054064B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28CE5BFA-208E-468A-9A0E-EA39F054064B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28CE5BFA-208E-468A-9A0E-EA39F054064B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28CE5BFA-208E-468A-9A0E-EA39F054064B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
